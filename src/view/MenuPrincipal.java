@@ -40,14 +40,17 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMenuCadastro.setText("Cadastro");
 
+        jMenuClient.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
         jMenuClient.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/view/img/icons/cliente-icon.png"))); // NOI18N
         jMenuClient.setText("Cliente");
         jMenuCadastro.add(jMenuClient);
 
+        jMenuIServico.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F2, 0));
         jMenuIServico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/view/img/icons/tesoura-icon.png"))); // NOI18N
         jMenuIServico.setText("Serviço");
         jMenuCadastro.add(jMenuIServico);
 
+        jMenuUser.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F3, 0));
         jMenuUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/view/img/icons/usuario-icon.png"))); // NOI18N
         jMenuUser.setText("Usuário");
         jMenuCadastro.add(jMenuUser);
