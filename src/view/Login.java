@@ -26,21 +26,63 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        Title = new javax.swing.JLabel();
+        LabelLogin = new javax.swing.JLabel();
+        CampoLogin = new javax.swing.JTextField();
+        LabelSenha = new javax.swing.JLabel();
+        CampoSenha = new javax.swing.JPasswordField();
+        PainelLogin = new javax.swing.JLabel();
+        LogoFundo = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Title.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Title.setForeground(new java.awt.Color(255, 255, 255));
+        Title.setText("Login");
+        getContentPane().add(Title, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
+
+        LabelLogin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelLogin.setForeground(new java.awt.Color(255, 255, 255));
+        LabelLogin.setText("Login");
+        getContentPane().add(LabelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 260, -1, -1));
+
+        CampoLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoLoginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CampoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 140, -1));
+
+        LabelSenha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelSenha.setForeground(new java.awt.Color(255, 255, 255));
+        LabelSenha.setText("Senha");
+        getContentPane().add(LabelSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, -1));
+
+        CampoSenha.setText("jPasswordField1");
+        CampoSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CampoSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 140, -1));
+
+        PainelLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/view/img/painel-login.png"))); // NOI18N
+        getContentPane().add(PainelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 80, -1, -1));
+
+        LogoFundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/view/img/Logo.jpg"))); // NOI18N
+        getContentPane().add(LogoFundo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void CampoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoLoginActionPerformed
+
+    private void CampoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CampoSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +120,12 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField CampoLogin;
+    private javax.swing.JPasswordField CampoSenha;
+    private javax.swing.JLabel LabelLogin;
+    private javax.swing.JLabel LabelSenha;
+    private javax.swing.JLabel LogoFundo;
+    private javax.swing.JLabel PainelLogin;
+    private javax.swing.JLabel Title;
     // End of variables declaration//GEN-END:variables
 }
