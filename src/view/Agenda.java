@@ -26,10 +26,16 @@ public class Agenda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollTabelaAgenda = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButtonAgendar = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
         jTextValor = new javax.swing.JTextField();
         jTextId = new javax.swing.JTextField();
         jTextHora = new javax.swing.JTextField();
         jTextData = new javax.swing.JTextField();
+        jLabelObservacoes = new javax.swing.JLabel();
+        jLabelTitleAgenda = new javax.swing.JLabel();
         jLabelHora = new javax.swing.JLabel();
         jLabelData = new javax.swing.JLabel();
         jLabelValor = new javax.swing.JLabel();
@@ -43,59 +49,110 @@ public class Agenda extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jTextValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 190, 30));
-        getContentPane().add(jTextId, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 320, 190, 30));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Id", "Nome", "Cliente", "Valor"
+            }
+        ));
+        jScrollTabelaAgenda.setViewportView(jTable1);
+
+        getContentPane().add(jScrollTabelaAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 690, 1030, 300));
+
+        jButtonAgendar.setBackground(new java.awt.Color(144, 238, 144));
+        jButtonAgendar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jButtonAgendar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonAgendar.setText("Agendar");
+        jButtonAgendar.setAlignmentY(0.0F);
+        jButtonAgendar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonAgendar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAgendarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonAgendar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 610, 550, 50));
+
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 320, 550, 250));
+        getContentPane().add(jTextValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, 280, 40));
+        getContentPane().add(jTextId, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 280, 40));
 
         jTextHora.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextHoraActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 520, 190, 30));
+        getContentPane().add(jTextHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 620, 280, 40));
 
         jTextData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextDataActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextData, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 480, 190, 30));
+        getContentPane().add(jTextData, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 560, 280, 40));
 
+        jLabelObservacoes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabelObservacoes.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelObservacoes.setText("Observações");
+        getContentPane().add(jLabelObservacoes, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, -1, -1));
+
+        jLabelTitleAgenda.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        jLabelTitleAgenda.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelTitleAgenda.setText("Agenda");
+        getContentPane().add(jLabelTitleAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, -1, -1));
+
+        jLabelHora.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelHora.setForeground(new java.awt.Color(255, 255, 255));
         jLabelHora.setText("Hora");
-        getContentPane().add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 530, -1, -1));
+        getContentPane().add(jLabelHora, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 620, -1, -1));
 
+        jLabelData.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelData.setForeground(new java.awt.Color(255, 255, 255));
         jLabelData.setText("Data");
-        getContentPane().add(jLabelData, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 490, -1, -1));
+        getContentPane().add(jLabelData, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 570, -1, -1));
 
+        jLabelValor.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelValor.setForeground(new java.awt.Color(255, 255, 255));
         jLabelValor.setText("Valor");
-        getContentPane().add(jLabelValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 450, -1, -1));
+        getContentPane().add(jLabelValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 510, -1, -1));
 
+        jLabelServico.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelServico.setForeground(new java.awt.Color(255, 255, 255));
         jLabelServico.setText("Serviço");
-        getContentPane().add(jLabelServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 410, -1, -1));
+        getContentPane().add(jLabelServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, -1, -1));
 
+        jLabelNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelNome.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNome.setText("Nome");
-        getContentPane().add(jLabelNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
+        getContentPane().add(jLabelNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 390, -1, -1));
 
+        jLabelId.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabelId.setForeground(new java.awt.Color(255, 255, 255));
         jLabelId.setText("Id");
-        getContentPane().add(jLabelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 330, -1, -1));
+        getContentPane().add(jLabelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
 
         jComboServico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 400, 190, 30));
+        getContentPane().add(jComboServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 280, 40));
 
         jComboBoxNome.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBoxNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 190, 30));
+        getContentPane().add(jComboBoxNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, 280, 40));
 
         jLabelPainelAgenda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelPainelAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/view/img/Agenda-PainelFundo.png"))); // NOI18N
         getContentPane().add(jLabelPainelAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
 
         jLabelFundoAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/view/img/AgendaFundo.png"))); // NOI18N
-        getContentPane().add(jLabelFundoAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabelFundoAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1500, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -107,6 +164,14 @@ public class Agenda extends javax.swing.JFrame {
     private void jTextDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextDataActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButtonAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgendarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonAgendarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,6 +209,7 @@ public class Agenda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAgendar;
     private javax.swing.JComboBox<String> jComboBoxNome;
     private javax.swing.JComboBox<String> jComboServico;
     private javax.swing.JLabel jLabelData;
@@ -151,10 +217,15 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelHora;
     private javax.swing.JLabel jLabelId;
     private javax.swing.JLabel jLabelNome;
+    private javax.swing.JLabel jLabelObservacoes;
     private javax.swing.JLabel jLabelPainelAgenda;
     private javax.swing.JLabel jLabelServico;
+    private javax.swing.JLabel jLabelTitleAgenda;
     private javax.swing.JLabel jLabelValor;
+    private javax.swing.JScrollPane jScrollTabelaAgenda;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextData;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextHora;
     private javax.swing.JTextField jTextId;
     private javax.swing.JTextField jTextValor;
