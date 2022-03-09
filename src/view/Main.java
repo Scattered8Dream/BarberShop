@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package view;
+import Model.Agendamento;
 import Model.Cliente;
 import Model.Servico;
 import Model.Usuario;
@@ -19,9 +20,12 @@ public class Main {
         Cliente cliente = new Cliente("Rua tia Cotinha", "1236552301",1, "Moe");
         //Usuario usuario = new Usuario(0, nome, senha);
         
+        Agendamento agendamento = new Agendamento(1,cliente,servico,servico.getValor(),"02/05/2022");
+        
         System.out.println(servico.getDesc());
         System.out.println(servico.getValor());
         System.out.println(cliente.getNome());
+        System.out.println(agendamento.getCliente().getNome());
     
     }
 }
