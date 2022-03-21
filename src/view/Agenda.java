@@ -4,18 +4,37 @@
  */
 package view;
 
+import Controller.AgendaController;
+import javax.swing.JComboBox;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 /**
  *
  * @author edson
  */
 public class Agenda extends javax.swing.JFrame {
 
+    private final AgendaController controller;
+
     /**
      * Creates new form Agenda
      */
     public Agenda() {
         initComponents();
+        controller = new AgendaController(this);
     }
+
+    public JTable getTable() {
+        return jTable1;
+    }
+
+    public void setTable(JTable jTable1) {
+        this.jTable1 = jTable1;
+    }
+
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -48,14 +67,12 @@ public class Agenda extends javax.swing.JFrame {
         jLabelFundoAgenda = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Id", "Nome", "Cliente", "Valor"
@@ -141,10 +158,14 @@ public class Agenda extends javax.swing.JFrame {
         jLabelId.setText("Id");
         getContentPane().add(jLabelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 330, -1, -1));
 
-        jComboServico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboServico.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+        jComboServico.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboServicoItemStateChanged(evt);
+            }
+        });
         getContentPane().add(jComboServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, 280, 40));
 
-        jComboBoxNome.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBoxNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, 280, 40));
 
         jLabelPainelAgenda.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -172,6 +193,10 @@ public class Agenda extends javax.swing.JFrame {
     private void jButtonAgendarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgendarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonAgendarActionPerformed
+
+    private void jComboServicoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboServicoItemStateChanged
+        this.controller.atualizaValor();
+    }//GEN-LAST:event_jComboServicoItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -230,4 +255,37 @@ public class Agenda extends javax.swing.JFrame {
     private javax.swing.JTextField jTextId;
     private javax.swing.JTextField jTextValor;
     // End of variables declaration//GEN-END:variables
+
+    private void iniciar() {
+        this.controller.atualizaTabela();
+        this.controller.atualizaCliente();
+        this.controller.atualizaServico();
+        this.controller.atualizaValor();
+    }
+
+    public JComboBox<String> getjComboBoxNome() {
+        return jComboBoxNome;
+    }
+
+    public void setjComboBoxNome(JComboBox<String> jComboBoxNome) {
+        this.jComboBoxNome = jComboBoxNome;
+    }
+
+    public JComboBox<String> getjComboServico() {
+        return jComboServico;
+    }
+
+    public void setjComboServico(JComboBox<String> jComboServico) {
+        this.jComboServico = jComboServico;
+    }
+
+    public JTextField getjTextValor() {
+        return jTextValor;
+    }
+
+    public void setjTextValor(JTextField jTextValor) {
+        this.jTextValor = jTextValor;
+    }
+    
+    
 }

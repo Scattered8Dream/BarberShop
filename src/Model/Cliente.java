@@ -17,7 +17,7 @@ public class Cliente extends Pessoa {
     protected String endereco;
     protected String cep;
 
-    public Cliente(String endereco, String cep, int id, String nome, char sexo, String dataNascimento, String telefone, String email) {
+    public Cliente(int id, String nome, char sexo,String dataNascimento, String telefone, String email, String endereco, String cep) {
         super(id, nome, sexo, dataNascimento, telefone, email);
         this.endereco = endereco;
         this.cep = cep;
@@ -45,6 +45,14 @@ public class Cliente extends Pessoa {
     public void setCep(String cep) {
         this.cep = cep;
     }
+    
+    
+    @Override
+    public String toString(){
+        return getNome();
+    }
 
+    
+    
     
 }

@@ -31,8 +31,20 @@ public class Servico {
         return valor;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setValor(float valor) {
         this.valor = valor;
     }
-     
+    
+    @Override
+    public String toString(){
+        return getDesc();
+    }
 }

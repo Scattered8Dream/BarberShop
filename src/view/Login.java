@@ -4,17 +4,24 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
+import Controller.LoginControler;
+import Model.DAO.Banco;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 /**
  *
  * @author edson
  */
 public class Login extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Login
-     */
+    private final LoginControler controller;
     public Login() {
         initComponents();
+        controller = new LoginControler(this); /*O this como parâmetro diz que essa instância de login vai ser
+                                                 a usada como parâmetro para criar o controller*/
+        Banco.inicia();
+        
     }
 
     /**
@@ -31,6 +38,7 @@ public class Login extends javax.swing.JFrame {
         CampoLogin = new javax.swing.JTextField();
         LabelSenha = new javax.swing.JLabel();
         CampoSenha = new javax.swing.JPasswordField();
+        jButtonLogin = new javax.swing.JButton();
         PainelLogin = new javax.swing.JLabel();
         LogoFundo = new javax.swing.JLabel();
 
@@ -57,15 +65,22 @@ public class Login extends javax.swing.JFrame {
         LabelSenha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         LabelSenha.setForeground(new java.awt.Color(255, 255, 255));
         LabelSenha.setText("Senha");
-        getContentPane().add(LabelSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, -1, -1));
+        getContentPane().add(LabelSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, -1, -1));
 
-        CampoSenha.setText("jPasswordField1");
         CampoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CampoSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 140, -1));
+        getContentPane().add(CampoSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 140, -1));
+
+        jButtonLogin.setText("Login");
+        jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLoginActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, 140, -1));
 
         PainelLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/view/img/painel-login.png"))); // NOI18N
         getContentPane().add(PainelLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, 80, -1, -1));
@@ -83,6 +98,12 @@ public class Login extends javax.swing.JFrame {
     private void CampoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CampoSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CampoSenhaActionPerformed
+
+    private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
+        //Executa quando eu clico no botão
+        controller.entrarNoSistemas();
+        
+    }//GEN-LAST:event_jButtonLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -127,5 +148,30 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel LogoFundo;
     private javax.swing.JLabel PainelLogin;
     private javax.swing.JLabel Title;
+    private javax.swing.JButton jButtonLogin;
     // End of variables declaration//GEN-END:variables
+
+    public void ExibeMensagem(String executei_o_imprime) {
+        JOptionPane.showMessageDialog(null, executei_o_imprime );
+    }
+
+    public JTextField getCampoLogin() {
+        return CampoLogin;
+    }
+
+    public void setCampoLogin(JTextField CampoLogin) {
+        this.CampoLogin = CampoLogin;
+    }
+
+    public JPasswordField getCampoSenha() {
+        return CampoSenha;
+    }
+
+    public void setCampoSenha(JPasswordField CampoSenha) {
+        this.CampoSenha = CampoSenha;
+    }
+
+    
+
+
 }

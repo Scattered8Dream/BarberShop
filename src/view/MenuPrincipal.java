@@ -4,17 +4,21 @@
  */
 package view;
 
+import Controller.MenuPrincipalController;
+
 /**
  *
  * @author edson
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuPrincipal
-     */
+    private final MenuPrincipalController menuprincipal;
+    
     public MenuPrincipal() {
         initComponents();
+        
+        //Criando um objeto controlador menu, passando essa view como parâmetro
+         this.menuprincipal = new MenuPrincipalController(this);
     }
 
     /**
@@ -33,6 +37,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuIServico = new javax.swing.JMenuItem();
         jMenuUser = new javax.swing.JMenuItem();
         jMenuOperacao = new javax.swing.JMenu();
+        jMenuAgenda = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +63,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenuCadastro);
 
         jMenuOperacao.setText("Operação");
+
+        jMenuAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/view/img/icons/agenda-icon.png"))); // NOI18N
+        jMenuAgenda.setText("Agenda");
+        jMenuAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuAgendaActionPerformed(evt);
+            }
+        });
+        jMenuOperacao.add(jMenuAgenda);
+
         jMenuBar1.add(jMenuOperacao);
 
         setJMenuBar(jMenuBar1);
@@ -81,6 +96,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuAgendaActionPerformed
+        this.menuprincipal.navegarAgenda();
+    }//GEN-LAST:event_jMenuAgendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,6 +138,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMenuAgenda;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuCadastro;
     private javax.swing.JMenuItem jMenuClient;
